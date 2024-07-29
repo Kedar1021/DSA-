@@ -1,0 +1,22 @@
+#include <vector>
+
+class Solution {
+public:
+    bool check(std::vector<int>& nums) {
+        int count = 0;
+        int n = nums.size(); // Define the size of the vector
+
+        for (int i = 1; i < n; i++) {
+            if (nums[i] < nums[i-1]) {
+                count++;
+            }
+        }
+
+        if (nums[n-1] > nums[0]) {
+            count++;
+        }
+
+        return count <= 1;
+    }
+};
+
