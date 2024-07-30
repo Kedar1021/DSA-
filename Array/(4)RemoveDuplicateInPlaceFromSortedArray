@@ -1,0 +1,14 @@
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        int n = nums.size(); // Get the size of the input vector
+        int i = 0; // Initialize the index for the last unique element
+        for (int j = 1; j < n; j++) { // Loop through the array starting from the second element
+            if (nums[i] != nums[j]) { // Check if the current element is different from the last unique element
+                nums[i + 1] = nums[j]; // If different, update the next position with the current element
+                i++; // Move to the next position for unique elements
+            }
+        }
+        return i + 1; // Return the number of unique elements
+    }
+};
